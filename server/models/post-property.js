@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const hotelbookSchema = mongoose.Schema({
+const PostPropertySchema = mongoose.Schema({
   imgurl: {
     type: String,
   },
@@ -95,6 +95,6 @@ const hotelbookSchema = mongoose.Schema({
   ],
 });
 
-const HotelBook = mongoose.model("postproperty", hotelbookSchema);
+const PostProperty = mongoose.model("PostProperty", PostPropertySchema);
 
-module.exports = HotelBook;
+module.exports = PostProperty;
