@@ -25,7 +25,7 @@ app.use(cors());
 // app.use("/", spa);
 
 app.use(require('./router/adminRouter'))
-app.use(require('./router/listproperties-cart'))
+app.use(require('./router/post-property'))
 app.use(require('./router/spaRouter'))
 
 app.get("/", (req, res) => {
