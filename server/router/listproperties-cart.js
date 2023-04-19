@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Razorpay = require("razorpay");
-const HotelBook = require("../models/hotelbook");
+const HotelBook = require("../models/post-property");
 const cartModel = require("../models/cart");
 require("dotenv").config();
 

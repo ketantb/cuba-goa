@@ -9,17 +9,17 @@ const hotelbookSchema = mongoose.Schema({
   mobile: {
     type: String,
   },
-  address:{
-    type:String,
+  address: {
+    type: String,
   },
-  zip:{
-    type:String
+  zip: {
+    type: String
   },
-  city:{
-    type:String,
+  city: {
+    type: String,
   },
-  state:{
-    type:String,
+  state: {
+    type: String,
   },
   content: {
     type: String,

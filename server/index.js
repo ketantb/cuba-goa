@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 var cors = require("cors");
+const port =  process.env.PORT || 4001
 
 // const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
@@ -23,8 +24,8 @@ app.use(cors());
 // app.use("/", booking);
 // app.use("/", spa);
 
-app.use(require('./router/userRouter'))
-app.use(require('./router/bookingRouter'))
+app.use(require('./router/adminRouter'))
+app.use(require('./router/listproperties-cart'))
 app.use(require('./router/spaRouter'))
 
 app.get("/", (req, res) => {
@@ -42,8 +43,8 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("connected to MongoDB");
-    app.listen(4001, () => {
-      console.log("Node api is running on port 4001");
+    app.listen(port, () => {
+      console.log(`Node api is running on port ${port}`);
     });
   })
   .catch((error) => {

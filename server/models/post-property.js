@@ -95,6 +95,6 @@ const hotelbookSchema = mongoose.Schema({
   ],
 });
 
-const HotelBook = mongoose.model("HotelBook", hotelbookSchema);
+const HotelBook = mongoose.model("postproperty", hotelbookSchema);
 
 module.exports = HotelBook;

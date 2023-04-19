@@ -4,19 +4,19 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-const User = require("../models/user");
+const Admin = require("../models/admin");
 const Contactus = require("../models/contactus");
 
 // Register
 router.post("/register", async (req, res) => {
   try {
     const { username, password, email } = req.body;
-    const existingEmail = await User.findOne({ email });
+    const existingEmail = await Admin.findOne({ email });
     if (existingEmail){
       return res.status(409).json({ message: "User already exists" });
     }
     const hash = await bcrypt.hash(password, 10);
-    const newRegistration = await User.create({
+    const newRegistration = await Admin.create({
       email: email,
       password: hash,
       name: username,
@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
   try {
       const { email, password } = req.body;
     // return res.status(400).json({email: email , password: password });
-    const user = await User.findOne({ email: email });
+    const user = await Admin.findOne({ email: email });
     if (!user)
       return res
         .status(400)
@@ -52,55 +52,6 @@ router.post("/login", async (req, res) => {
     res.status(400).json({ status: false, message: er.message });
   }
 });
-//
-// router.post("/login", async (req, res) => {
-//   const { email, password } = req.body;
-
-//   const user = await User.findOne({ email: email });
-//   if (user) {
-//     if (password === user.password) {
-//       res.send({ message: "Login Successfull", user: user });
-//     } else {
-//       res.send({ message: "Password didn't match" });
-//     }
-//   } else {
-//     res.send({ message: "User not registered" });
-//   }
-//   console.log(user);
-// });
-
-// router.post("/register", async (req, res) => {
-//   const { name, email, password } = req.body;
-//   const user = await User.findOne({ email: email });
-//   if (user) {
-//     return res.json({ message: "User already registerd" });
-//   } else {
-//     const user = await User.create({
-//       name,
-//       email,
-//       password,
-//     });
-//     console.log(user);
-//     user.save(err => {
-//         if(err) {
-//             res.send(err)
-//         } else {
-//             res.send( { message: "Successfully Registered, Please login now." })
-//         }
-//     })
-//   }
-// });
-
-router.get("/register", async (req, res) => {
-  try {
-    const user = await User.find({});
-    res.status(200).json(user);
-  } catch (error) {
-    res.status(5009).json({ message: error.message });
-  }
-});
-
-// contact us
 
 router.post("/contactus", async (req, res) => {
   try {
