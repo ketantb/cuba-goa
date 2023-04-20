@@ -26,6 +26,9 @@ router.post("/hotelbook", adminMiddleware, async (req, res) => {
     res.json({ success: true, data: resortData });
   } 
   catch (error) {
+    const hotelBook = await HotelBook.create(req.body);
+    res.status(200).json(hotelBook);
+  } catch (error) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
   }
@@ -88,6 +91,7 @@ router.delete("/hotelbook/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 
 
 module.exports = router;
