@@ -1,10 +1,12 @@
 import './App.css';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 import { Suspense } from 'react';
 import Footer from './components/Root-Component/Footer/Footer';
 import SpaDetailes from "./components/Root-Component/postSpaData/detailedSpa";
 import BookingForm from './components/Root-Component/BookingForm/BookingForm'
+import { useState } from 'react';
 
 
 const Header = React.lazy(() => import('./components/Header/Header'))
@@ -17,26 +19,28 @@ const OurProperties = React.lazy(() => import('./components/Root-Component/OurPr
 const ContactUs = React.lazy(() => import('./components/Root-Component/Contact/ContactUs'))
 const Gallery = React.lazy(() => import('./components/Root-Component/Gallery/Gallery'))
 const BookingPage = React.lazy(() => import('./components/Root-Component/BookingPage/BookingPage'))
-const LogIn2 = React.lazy(() => import('./components/Root-Component/LogIn2/Login2'))
-const  ShowInfoOfRoomCart = React.lazy(() => import('./components/Root-Component/Home/ShowInfoOfRoomCart'))
-const LearnMore = React.lazy(()=>import('./components/Root-Component/Home/LearnMore'))
+const register = React.lazy(() => import('./components/Root-Component/Register/Register'))
+const Login = React.lazy(() => import('./components/Root-Component/LogIn2/Login2.js'))
+const ShowInfoOfRoomCart = React.lazy(() => import('./components/Root-Component/Home/ShowInfoOfRoomCart'))
+const LearnMore = React.lazy(() => import('./components/Root-Component/Home/LearnMore'))
 
 
 
 function App() {
-
+  const [auth, setAuth] = useState('')
   return (
     <div style={{ position: 'relative' }}>
+
       <BrowserRouter>
         <Routes>
 
-          <Route path='/log-in' element={<Suspense fallback={<p>Loading....</p>}>
-            <LogIn2 />
+          <Route path='/signin' element={<Suspense fallback={<p>Loading....</p>}>
+            <Login />
           </Suspense>}>
           </Route>
 
 
-          <Route path="" element={<Header />}>
+          <Route path="" element={<Header auth={auth} setAuth={setAuth} />}>
 
             <Route path='/' element={
               <Suspense fallback={<p>Loading....</p>}>
@@ -109,34 +113,34 @@ function App() {
                   <Footer />
                 </>
               </Suspense>} />
- 
+
             <Route path='/view-room-info/:id/:idChild'
               element={
                 <Suspense fallback={<p>Loading....</p>}>
                   <ShowInfoOfRoomCart />
                 </Suspense>
               } />
-              <Route path="/leran-More" element={
-                <Suspense fallback={<p>Loading....</p>}>
-                    <LearnMore/>
+            <Route path="/leran-More" element={
+              <Suspense fallback={<p>Loading....</p>}>
+                <LearnMore />
               </Suspense>
-              } />
-             <Route path="/spa-details/:id"   element={
-                <Suspense fallback={<p>Loading....</p>}>
-                   <SpaDetailes />
+            } />
+            <Route path="/spa-details/:id" element={
+              <Suspense fallback={<p>Loading....</p>}>
+                <SpaDetailes />
               </Suspense>
-              } />
+            } />
 
-<Route path="/booking-form" element={
-   <Suspense fallback={<p>Loading....</p>}>
-      <BookingForm />
-   </Suspense>
-} />
+            <Route path="/booking-form" element={
+              <Suspense fallback={<p>Loading....</p>}>
+                <BookingForm />
+              </Suspense>
+            } />
 
 
           </Route>
-      
-          
+
+
         </Routes>
       </BrowserRouter>
 

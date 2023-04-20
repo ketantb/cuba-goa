@@ -7,10 +7,11 @@ require("dotenv").config();
 const Admin = require("../models/admin");
 const Contactus = require("../models/contactus");
 
+
 // Register
 router.post("/register", async (req, res) => {
   try {
-    const { username, password, email } = req.body;
+    const { name, password, email } = req.body;
     const existingEmail = await Admin.findOne({ email });
     if (existingEmail){
       return res.status(409).json({ message: "User already exists" });
@@ -19,7 +20,7 @@ router.post("/register", async (req, res) => {
     const newRegistration = await Admin.create({
       email: email,
       password: hash,
-      name: username,
+      name: name,
     });
 
     res.status(200).json({ status: true, message: "succefully registerd" });

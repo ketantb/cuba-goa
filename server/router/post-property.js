@@ -1,9 +1,13 @@
+
+require("dotenv").config();
+
 const express = require("express");
 const router = express.Router();
+const multer = require('multer')
 const Razorpay = require("razorpay");
 const HotelBook = require("../models/post-property");
 const cartModel = require("../models/cart");
-require("dotenv").config();
+const adminMiddleware = require('../middleware/admin')
 
 const secretKey = process.env.RAZOR_SECRET;
 const keyId = process.env.RAZOR_KEYID;
@@ -13,8 +17,15 @@ const instance = new Razorpay({
   key_secret: secretKey,
 });
 
-router.post("/hotelbook", async (req, res) => {
+
+
+
+router.post("/hotelbook", adminMiddleware, async (req, res) => {
   try {
+    const resortData = await HotelBook.create(req.body);
+    res.json({ success: true, data: resortData });
+  } 
+  catch (error) {
     const hotelBook = await HotelBook.create(req.body);
     res.status(200).json(hotelBook);
   } catch (error) {
@@ -23,6 +34,8 @@ router.post("/hotelbook", async (req, res) => {
   }
 });
 
+
+//GET ALL HOTEL DATA TO SHOW TO CLIENTS
 router.get("/hotelbook", async (req, res) => {
   try {
     const hotelBook = await HotelBook.find({});

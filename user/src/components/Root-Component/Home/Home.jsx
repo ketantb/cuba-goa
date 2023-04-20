@@ -124,7 +124,7 @@ const  breakPoints = [
       {ourRooms.map((el)=>
            <div className='cottages-card' style={{width:'300px'}}>
            <div className='cottages-img-parent'>
-             <img src={el.imgurl}></img>
+             <img src={el.imgurl} alt=''></img>
            </div>
             <div className="info">
               <div className='cottages-content'>

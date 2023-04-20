@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 var cors = require("cors");
+const path=require('path')
 const port =  process.env.PORT || 4001
 
 // const bcrypt = require('bcrypt');
@@ -12,8 +13,10 @@ const port =  process.env.PORT || 4001
 const app = express();
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
 app.use(cors());
+app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 
 // rotes//
 // const user = require("./router/userRouter");
@@ -25,8 +28,12 @@ app.use(cors());
 // app.use("/", spa);
 
 app.use(require('./router/adminRouter'))
+app.use(require('./router/clientRouter'))
 app.use(require('./router/post-property'))
 app.use(require('./router/spaRouter'))
+
+
+
 
 app.get("/", (req, res) => {
   try{

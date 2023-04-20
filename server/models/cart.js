@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema
+
 
 const cartSchema = {
   userId: {
@@ -21,6 +23,9 @@ const cartSchema = {
   totalPrice: {
     type: Number,
   },
+  client: {
+    type: Schema.Types.ObjectId
+  }
 };
 
 module.exports = mongoose.model("cart", cartSchema);
