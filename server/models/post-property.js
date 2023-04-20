@@ -11,6 +11,9 @@ const PostPropertySchema = mongoose.Schema({
     resortDescription: {
         type: String,
     },
+    resortImgURL:{
+      type:String
+    },
     rooms: [
         {
             imgurl: [
