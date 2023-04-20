@@ -20,7 +20,7 @@ const instance = new Razorpay({
 
 
 
-router.post("/hotelbook", adminMiddleware, async (req, res) => {
+router.post("/hotelbook", async (req, res) => {
   try {
     const resortData = await HotelBook.create(req.body);
     res.json({ success: true, data: resortData });
@@ -54,9 +54,11 @@ router.get("/hotelBook/:id", async (req, res) => {
 
 //to update hotelBook by id
 router.put("/hotelbook/:id", async (req, res) => {
+  // console.log(req.params.id)
+  // res.json({message: req.body})
   try {
     const { id } = req.params;
-    const hotelBook = await HotelBook.findByIdAndUpdate(id, req.body);
+    const hotelBook = await HotelBook.findByIdAndUpdate(id, {rooms: req.body.rooms});
     //we cannot find any product in database
     if (!hotelBook) {
       return res
@@ -73,7 +75,7 @@ router.put("/hotelbook/:id", async (req, res) => {
 // delete a hotel Book
 router.delete("/hotelbook/:id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params.id;
     const hotelBook = await HotelBook.findByIdAndDelete(id, req.body);
     //we cannot find any product in database
     if (!hotelBook) {
