@@ -24,10 +24,6 @@ router.post("/hotelbook", adminMiddleware, async (req, res) => {
   try {
     const resortData = await HotelBook.create(req.body);
     res.json({ success: true, data: resortData });
-  } 
-  catch (error) {
-    const hotelBook = await HotelBook.create(req.body);
-    res.status(200).json(hotelBook);
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
