@@ -5,7 +5,6 @@ import { CImage } from "@coreui/react";
 import axios from "axios";
 import BookingCard from "../BookingCard/BookingCard";
 import SummaryCard from "../SummaryCard/SummaryCard";
-import RoomComparison from "../CompareModal/CompareModal";
 import { Button } from "react-bootstrap";
 import { CButton } from "@coreui/react"
 import {AiOutlineCalendar} from'react-icons/ai'
@@ -348,12 +347,7 @@ console.log(allCapaCity)
             </Button>
           </div>
 
-          <RoomComparison
-            show={showCompareModal}
-            onHide={() => setShowCompareModal(false)}
-            compareList={compareList}
-            bookingData={bookingData}
-          />
+          
 
           <div className="booking-card-withS">
             <div className="booking-card">

@@ -5,7 +5,6 @@ import { CImage } from "@coreui/react";
 import axios from "axios";
 import BookingCard from "../BookingCard/BookingCard";
 import SummaryCard from "../SummaryCard/SummaryCard";
-import RoomComparison from "../CompareModal/CompareModal";
 import { Button } from "react-bootstrap";
 import { CButton } from "@coreui/react"
 import {AiOutlineCalendar} from'react-icons/ai'
@@ -221,9 +220,12 @@ const toggaleCalenderFun=()=>{
 
 
 function toRoomCapacity(capacity,type="Add"){
+
+  console.log(capacity,type)
+
+if(type==='Add'){
   function prevState(prev){
     let copyPrev = [...prev]
-if(type==='Add'){
      if(!prev.some((el)=>el.index===capacity.index && el.roomId ===capacity.roomId)){
       copyPrev.push(capacity)
     }else{  
@@ -234,10 +236,6 @@ if(type==='Add'){
       return el
     })
   }
-}else if (type==='remove'){
-  copyPrev = copyPrev.filter((el)=>!(el.index===capacity.index && el.roomId ===capacity.roomId))
-
-}
  
     setSummaryData((prev)=>{
       return prev.map((el)=>{
@@ -260,7 +258,7 @@ if(type==='Add'){
     return copyPrev
    }
     setAllCapaCity((val)=>prevState(val))
-
+}
 
 
  }
@@ -349,12 +347,7 @@ console.log(allCapaCity)
             </Button>
           </div>
 
-          <RoomComparison
-            show={showCompareModal}
-            onHide={() => setShowCompareModal(false)}
-            compareList={compareList}
-            bookingData={bookingData}
-          />
+          
 
           <div className="booking-card-withS">
             <div className="booking-card">

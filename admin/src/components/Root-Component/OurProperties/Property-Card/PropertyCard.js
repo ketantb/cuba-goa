@@ -1,6 +1,6 @@
 import './PropertyCard.css'
 import '../OurProperties.css'
-import axios from '../../../../helpers/axios';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {
     CButton, CCol, CModal, CModalHeader,

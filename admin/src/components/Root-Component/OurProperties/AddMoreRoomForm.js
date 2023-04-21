@@ -9,7 +9,7 @@ import {
   CFormTextarea, CFormCheck, CCard, CCardHeader, CCardBody,
   CImage, CContainer, CFormLabel
 } from '@coreui/react'
-import axios from '../../../helpers/axios'
+import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { storage } from '../../firebase'
