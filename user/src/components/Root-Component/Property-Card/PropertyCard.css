@@ -1,0 +1,141 @@
+/* .cards{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+} */
+
+.property-card-container{
+    width: 400px;
+    /* height: 52rem; */
+    box-sizing: content-box;
+    /* padding-bottom: 3rem; */
+    margin: auto;
+    margin-top: 5rem;
+    border: 1px solid #908f8f;
+    border-radius: 12px;
+}
+
+#property-card-img{
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* margin-top: 1.5rem; */
+}
+
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* margin-top: 10px; */
+}
+
+.card-footer-lb>:nth-child(1){
+    text-align: left;
+    font-size: 16px;
+}
+
+.card-footer-lb>:nth-child(2){
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-footer-rb>div>button{
+    padding-top: 5px;
+    width: 110px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.card-footer-rb>div>button:hover{
+    background-color: black;
+}
+
+.card-footer-rb>div:nth-child(2){
+    margin-top: 5px;
+}
+
+#property-card-add-btn{
+    background-color: rgb(250, 199, 106);
+    color: rgb(49, 49, 49);
+}
+
+#property-card-add-btn:hover{
+    background-color:  orange;
+}
+
+#property-card-delete-btn{
+    background-color: rgb(248, 69, 69);
+}
+
+#property-card-delete-btn:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+
+.property-card-delete-icon{
+    margin-left: 92%;
+    font-size: 22px;
+    color: hsla(0, 3%, 94%, 0.922);
+    cursor: pointer;
+    /* background: hsla(0,3%,94%,.373); */
+}
+
+.property-card-delete-icon:hover{
+    color: red;
+    font-size: 28px;
+}
+
+@media screen and (max-width: 650px) {
+    .property-card-container{
+        width: 350px;
+        /* height: 52rem; */
+        box-sizing: content-box;
+        /* padding-bottom: 3rem; */
+        margin: auto;
+        margin-top: 5rem;
+        border: 1px solid #908f8f;
+        border-radius: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .property-card-container{
+        width: 295px;
+        /* height: 52rem; */
+        box-sizing: content-box;
+        /* padding-bottom: 3rem; */
+        margin: auto;
+        margin-top: 5rem;
+        border: 1px solid #908f8f;
+        border-radius: 12px;
+    }
+
+    .card-footer-lb>:nth-child(1){
+        font-size: 13px;
+    }
+    
+    .card-footer-lb>:nth-child(2){
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .card-footer-rb>div>button{
+        padding-top: 5px;
+        width: 100px;
+        height: 30px;
+        font-size: 11px;
+    }
+    .property-card-delete-icon{
+        margin-left: 87%;
+        font-size: 20px;
+        color: hsla(0, 3%, 94%, 0.922);
+        cursor: pointer;
+        /* background: hsla(0,3%,94%,.373); */
+    }
+}

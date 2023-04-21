@@ -17,7 +17,10 @@ const Header = ({ auth, setAuth }) => {
   }, [token])
   const [hidenew, setNavBar] = useState(true)
 
-
+  //eslint-disable-next-line
+  const closenavbar = () => {
+    setNavBar(false)
+  }
 
 
 
@@ -41,12 +44,12 @@ const Header = ({ auth, setAuth }) => {
           <NavLink to='/gallery' className={({ isActive }) => (isActive ? 'main-nav-active' : '')}><span>GALLERY</span></NavLink>
 
           {auth ? (
-            <NavLink to='/gallery' onClick={()=>{
+            <NavLink to='/' onClick={() => {
               navigate('/');
               localStorage.clear()
             }}><span>LOGOUT</span></NavLink>
           ) : (
-            <NavLink to='/signin' onClick={()=>{
+            <NavLink to='/signin' onClick={() => {
               navigate('/signin');
             }}><span>LOGIN</span></NavLink>
           )}

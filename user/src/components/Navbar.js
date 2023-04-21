@@ -1,20 +1,32 @@
+import './OurProperties.css'
 import React from 'react'
-import "../styles/nav.css"
+import PropertyCard from './Property-Card/PropertyCard'
 
-const Navbar = () => {
+const Footer = React.lazy(() => import('../Footer/Footer'))
+
+
+
+const OurProperties = () => {
+
   return (
-<div class="bg-vid">
-  <div class="container">
-	<div className="topnav">
-           <a href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-      </div>
-	  </div>
-	  </div>
-
+    <>
+      <main className='our-properties-main'>
+        <div className='quba-goa-search'>
+          <div className='banner'>
+            <h2>The Cuba Goa Properties</h2>
+            <h6 style={{ margin: '20px 0' }}>BEACH HUTS, BUNGALOWS & RESORTS</h6>
+          </div>
+          <div className='properties-to-book'>
+            {/* filter section do at veyr last */}
+          </div>
+          <div>
+            <PropertyCard/>
+          </div>
+        </div>
+      </main >
+      <Footer />
+    </>
   )
 }
 
-export default Navbar
+export default OurProperties

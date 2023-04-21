@@ -7,7 +7,8 @@ import Footer from './components/Root-Component/Footer/Footer';
 import SpaDetailes from "./components/Root-Component/postSpaData/detailedSpa";
 import BookingForm from './components/Root-Component/BookingForm/BookingForm'
 import { useState } from 'react';
-
+import Register from './components/Root-Component/Register/Register';
+import RatingForm from './components/Root-Component/rating-form/RatingForm';
 
 const Header = React.lazy(() => import('./components/Header/Header'))
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -19,8 +20,7 @@ const OurProperties = React.lazy(() => import('./components/Root-Component/OurPr
 const ContactUs = React.lazy(() => import('./components/Root-Component/Contact/ContactUs'))
 const Gallery = React.lazy(() => import('./components/Root-Component/Gallery/Gallery'))
 const BookingPage = React.lazy(() => import('./components/Root-Component/BookingPage/BookingPage'))
-const register = React.lazy(() => import('./components/Root-Component/Register/Register'))
-const Login = React.lazy(() => import('./components/Root-Component/LogIn2/Login2.js'))
+const Signin = React.lazy(() => import('./components/Root-Component/signin/Signin'))
 const ShowInfoOfRoomCart = React.lazy(() => import('./components/Root-Component/Home/ShowInfoOfRoomCart'))
 const LearnMore = React.lazy(() => import('./components/Root-Component/Home/LearnMore'))
 
@@ -35,10 +35,10 @@ function App() {
         <Routes>
 
           <Route path='/signin' element={<Suspense fallback={<p>Loading....</p>}>
-            <Login />
+            <Signin />
           </Suspense>}>
           </Route>
-
+          <Route path='/register' element={<Register />}></Route>
 
           <Route path="" element={<Header auth={auth} setAuth={setAuth} />}>
 
@@ -49,6 +49,7 @@ function App() {
                 </>
               </Suspense>
             } />
+          <Route path='/rating-form' element={<RatingForm/>}> </Route>
 
             <Route path="/about" element={
               <Suspense fallback={<p>Loading....</p>}>
@@ -136,7 +137,6 @@ function App() {
                 <BookingForm />
               </Suspense>
             } />
-
 
           </Route>
 
