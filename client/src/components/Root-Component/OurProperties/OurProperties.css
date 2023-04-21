@@ -136,6 +136,7 @@ width: 450px;
 
 
 }
+
 .select-menu .select-btn{
 display: flex;
 height: 50px;
@@ -321,4 +322,55 @@ color: gray;
     display: flex;
     padding: 15px 0;
     justify-content: end;
+}
+
+@media (max-width:680px){
+    .quba-goa-search .banner {
+        height: 400px;
+        padding-top: 140px;
+        /* margin-bottom: 200px; */
+    }
+    .quba-goa-search .banner h2{
+        font-size:42px;
+    }
+
+    .quba-goa-search .banner h6{
+        font-size: 26px;
+    }
+}
+
+.add-on-btn{
+    
+}
+
+@media (max-width:480px){
+    .aminitiesFonts{
+        font-size: 15px;
+    }
+    .quba-goa-search .banner {
+        height: 350px;
+        padding-top: 140px;
+        /* margin-bottom: 200px; */
+    }
+    .quba-goa-search .banner h2{
+        font-size:36px;
+    }
+
+    .quba-goa-search .banner h6{
+        font-size: 22px;
+    }
+
+    .select-menu .select-btn{
+        display: flex;
+        height: 35px;
+        background: #fff;
+        padding: 20px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .properties-to-book{
+        height: 75px;
+        padding-top: 20px;
+    }
 }
