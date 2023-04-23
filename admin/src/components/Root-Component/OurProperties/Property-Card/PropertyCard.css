@@ -91,6 +91,25 @@
     font-size: 28px;
 }
 
+.custom-ui{
+    background-color: #28bae6;
+    color: #FFF;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.custom-ui>button{
+    background-color: orange;
+    color: #FFF;
+    margin-top: 15px;
+}
+
+.custom-ui>button:hover{
+    background-color: rgb(250, 0, 0);
+}
+
 @media screen and (max-width: 650px) {
     .property-card-container{
         width: 350px;

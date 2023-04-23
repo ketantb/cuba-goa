@@ -13,7 +13,7 @@ const Gallery = () => {
   const [selectedImg,setSelectedImg] = useState('')
 
   const getHotelData  = async  ()=>{
-    const response = await  fetch(`https://cuba-goa-z4hl.onrender.com/hotelbook`)
+    const response = await  fetch(`https://cubagoa-server.onrender.com/hotelbook`)
     const data  =  await response.json() 
 
     const allImgUrl = []
@@ -47,7 +47,7 @@ const Gallery = () => {
     <main className='gallery-main'>
       <div  style={{height:'fit-content'}} className='w-100 p-4 m-0 d-flex bg-white'>
  
-          <div className='sub-img-parent '  >
+          {/* <div className='sub-img-parent '  >
             {galleryData.map((el)=>
 
                            <div className='img-gallary-parent' onClick={()=>setSelectedImg(el)} >                  
@@ -58,7 +58,7 @@ const Gallery = () => {
                            </div>
                            )}
            
-          </div>  
+          </div>   */}
           {selectedImg &&<div className='selected-div-img'>
             <img className='img-selected' src={selectedImg.imgUrl}/>
              <div className='img-gallary-selected-text-2'>{selectedImg.title}</div>

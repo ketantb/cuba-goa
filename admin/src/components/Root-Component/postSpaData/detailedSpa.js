@@ -14,7 +14,7 @@ export default function DetailedSpa() {
   const fetchDetails = async (id) => {
     try {
       const { data } = await axios.get(
-        "https://cuba-goa-z4hl.onrender.com/spaDetails/" + id
+        "http://localhost:4001/spaDetails/" + id
       );
       console.log(data);
       if (data.success) {

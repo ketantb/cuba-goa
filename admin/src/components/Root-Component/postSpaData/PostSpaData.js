@@ -21,7 +21,7 @@ function PostForm() {
   //post data form
   const postData = async () => {
     await axios
-      .post("https://cuba-goa-z4hl.onrender.com/addspa", form)
+      .post("https://cubagoa-server.onrender.com/addspa", form)
       .then((resp) => {
         console.log(resp);
       })

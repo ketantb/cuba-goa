@@ -13,10 +13,11 @@ const Spa = () => {
 
   const getSpaList = async () => {
     try {
-      const response = await axios.get("https://cuba-goa-z4hl.onrender.com/allSpaList");
+      const response = await axios.get("http://localhost:4001/allSpaList");
       if (response.data.success) {
         console.log(response.data.data);
         setData(response.data.data);
+        console.log(data)
       } else {
         console.log(response.data.message);
       }
