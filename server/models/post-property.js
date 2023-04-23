@@ -22,8 +22,7 @@ const PostPropertySchema = mongoose.Schema({
             ],
             roomType: { type: String },
             totalRooms: { type: String },
-            adultCapacity: { type: String },
-            childrenCapacity: { type: String },
+            capacity: { type: String },
             availableRooms: { type: String },
             ratePerNight: { type: String },
             //aminities
@@ -45,15 +44,15 @@ const PostPropertySchema = mongoose.Schema({
         }
     ],
 
-    // rating: [
-    //     {
-    //         name: String,
-    //         email: String,
-    //         platform: String,
-    //         additionalComments: String,
-    //         rating: Number
-    //     }
-    // ]
+    rating: [
+        {
+            name: String,
+            email: String,
+            platform: String,
+            additionalComments: String,
+            rating: Number
+        }
+    ]
 });
 
 const PostProperty = mongoose.model("PostProperty", PostPropertySchema);
