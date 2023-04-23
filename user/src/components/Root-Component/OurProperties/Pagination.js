@@ -8,11 +8,12 @@ const Pagination = ({ totalPosts, postPerPage, setCurrentPage }) => {
     }
 
     return (
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
             {
                 pageNos.map((pageNo, i) => {
                     return (
-                        <button key={i+1} onClick={()=>setCurrentPage(pageNo)}>{pageNo}</button>
+                        <button key={i + 1} onClick={() => setCurrentPage(pageNo)}
+                            style={{ marginLeft: '0.1rem' }}>{pageNo}</button>
                     )
                 })
             }

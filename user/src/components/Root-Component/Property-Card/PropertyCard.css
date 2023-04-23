@@ -5,16 +5,15 @@
 } */
 
 .property-card-container{
-    width: 25rem;
+    width: 22rem;
     /* height: 52rem; */
     box-sizing: content-box;
     /* padding-bottom: 3rem; */
-    margin: auto;
-    margin-top: 5rem;
     border: 1px solid #908f8f;
     border-radius: 12px;
-    border:1px solid black;
-    margin-left: 1rem;
+    /* border:1px solid red; */
+    margin-left: 1.5rem;
+    margin-top: 1rem;
 }
 
 #property-card-img{
@@ -47,6 +46,7 @@
     font-weight: 500;
 }
 
+.property-card-container
 .card-footer-rb>div>button{
     padding-top: 5px;
     width: 110px;
@@ -54,10 +54,12 @@
     font-size: 12px;
 }
 
+.property-card-container
 .card-footer-rb>div>button:hover{
     background-color: black;
 }
 
+.property-card-container
 .card-footer-rb>div:nth-child(2){
     margin-top: 5px;
 }
@@ -73,15 +75,18 @@
     background-color:  orange;
 }
 
+.property-card-container
 #property-card-delete-btn{
     background-color: rgb(248, 69, 69);
 }
 
+.property-card-container
 #property-card-delete-btn:hover{
     background-color: rgb(255, 0, 0);
 }
 
 
+.property-card-container
 .property-card-delete-icon{
     margin-left: 92%;
     font-size: 22px;
@@ -90,6 +95,7 @@
     /* background: hsla(0,3%,94%,.373); */
 }
 
+.property-card-container
 .property-card-delete-icon:hover{
     color: red;
     font-size: 28px;

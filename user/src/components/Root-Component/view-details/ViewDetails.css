@@ -2,7 +2,7 @@
     /* border: 1px solid black; */
     width: 70%;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 6rem;
     padding: 1rem 1rem 1rem 1rem;
     margin-bottom: 2rem;
 
@@ -11,18 +11,15 @@
 .view-details-wrapper .section1 .back-btn {
     background-color: white;
     font-weight: normal;
-    /* border: 1px solid black; */
-    border-radius: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0rem;
     padding: 0.5px 1rem;
 }
 
-.view-details-wrapper .section1 .back-btn:hover {
-    background-color: black;
-    color: white;
-}
+
 
 .view-details-wrapper .section2 {
-    margin-top: 0rem;
+    margin-top: 1rem;
     /* border: 1px solid black; */
 
 }
@@ -38,15 +35,101 @@
     width: 80%;
 }
 
+
 .view-details-wrapper .section2 .row1 .col2 {
-    margin: 0rem 0rem;
+    width: 8rem;
+    height: fit-content;
+    margin-right: 0.5rem;
+    /* border: 1px solid black; */
 }
 
-.view-details-wrapper .section2 .row1 .col2 select {
-    height: 3rem;
-    width: 9rem;
-    margin-left: 0rem;
-    padding-left: 0rem;
+.view-details-wrapper .section2 .row1 .col2 a {
+    color: white;
+}
+
+.view-details-wrapper .section2 .row1 .col2:hover {
+    background-color: black;
+}
+
+.view-details-wrapper .section4 {
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+.view-details-wrapper .section4 .col1 {
+    display: flex;
+    /* border:1px solid black; */
+    width: 70%;
+}
+
+.view-details-wrapper .section4 .col1 p {
+    line-height: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    height: 100%;
+    /* border:1px solid black; */
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.view-details-wrapper .section4 .col2 {
+    width: 29%;
+    padding: 1rem 2rem;
+    background-color: rgb(225, 239, 245);
+}
+
+.view-details-wrapper .section4 .col2 h6 {
+    color: rgb(8, 8, 100);
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+}
+
+.view-details-wrapper .section4 .col2 div {
+    padding-top: 1rem;
+
+}
+
+.view-details-wrapper #booking-section {
+    margin-top: 2rem;
+    border-top: 0.2px solid rgb(227, 225, 225);
+    padding-top: 1rem;
+}
+
+.view-details-wrapper #booking-section .room-card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.view-details-wrapper .row3{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.1px solid rgb(232, 231, 231);
+}
+
+.view-details-wrapper .row3 div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-details-wrapper .row4{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-details-wrapper .row4 button{
+    background-color: white;
+    background-color: rgb(212, 212, 247);
+    border-radius: 0rem;
+    padding: 5px;
+    color: black;
+    font-weight: normal;
+}
+
+.view-details-wrapper .row4 button:hover{
+    background-color: black;
+    color: white;
 }
 
 @media only screen and (max-width:900px) {
@@ -64,6 +147,7 @@
         /* border: 1px solid black; */
         border-radius: 0.5rem;
         padding: 0.5px 1rem;
+        margin-left: 1rem;
     }
 
     .view-details-wrapper .section1 .back-btn:hover {
@@ -80,7 +164,6 @@
     .view-details-wrapper .section2 .row1 {
         display: flex;
         justify-content: none;
-        flex-direction: column;
     }
 
     .view-details-wrapper .section2 .row1 .col1 {
@@ -90,12 +173,56 @@
     }
 
     .view-details-wrapper .section2 .row1 .col2 {
-        margin: 0.5rem 1rem;
-    }
-
-    .view-details-wrapper .section2 .row1 .col2 select {
-        height: 2rem;
         width: 15rem;
+        height: fit-content;
+        margin-right: 0.5rem;
+        border: 1px solid black;
+        margin: 0.5rem 1rem;
+
     }
 
+
+    .view-details-wrapper .section4 {
+        display: flex;
+        /* border:1px solid black; */
+        flex-direction: column;
+    }
+
+    .view-details-wrapper .section4 .col1 {
+        display: flex;
+        /* border:1px solid black; */
+        width: 100%;
+    }
+
+    .view-details-wrapper .section4 .col1 p {
+        line-height: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+        /* border:1px solid black; */
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+
+    .view-details-wrapper .section4 .col2 {
+        width: 100%;
+        padding: 1rem 2rem;
+        background-color: rgb(225, 239, 245);
+    }
+
+    .view-details-wrapper .section4 .col2 h6 {
+        color: rgb(8, 8, 100);
+        font-weight: bold;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+
+    .view-details-wrapper .section4 .col2 div {
+        padding-top: 1rem;
+
+    }
+
+    .view-details-wrapper #booking-section h3 {
+        margin-left: 1rem;
+    }
 }

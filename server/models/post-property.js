@@ -41,6 +41,8 @@ const PostPropertySchema = mongoose.Schema({
             fitnessCenter: { type: Boolean },
             swimmingPool: { type: Boolean },
             spa: { type: Boolean },
+            roomId: { type: String }
+
         }
     ],
 

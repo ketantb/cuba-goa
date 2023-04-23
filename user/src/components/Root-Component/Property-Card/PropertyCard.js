@@ -1,49 +1,46 @@
 import axios from 'axios';
 import './PropertyCard.css'
 import { useState, useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 // import AddMoreRoomForm from '../AddMoreRoomForm';
 
 
 const PropertyCard = ({ property }) => {
 
-const navigate=useNavigate()
+    const navigate = useNavigate()
     //SHOW ROOMS
-    const viewRooms=(id,resortname)=>{
+    const viewRooms = (id, resortname) => {
         navigate(`/${resortname}/${id}/rooms`)
-        console.log(resortname,id)
+        console.log(resortname, id)
     }
 
     return (
-        <>
-            <div className="property-card-container">
-                <div id="property-card-img" style={{
-                    background: `url(${property.resortImgURL})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center center'
-                }}>
-                    <div className='property-card-delete-icon'><RiDeleteBin5Fill /></div>
-                </div>
-                <div className="card-footer">
-                    <div className="card-footer-lb">
-                        <div>
-                            {property.resortLocation + ",  India"}
-                        </div>
-                        <div>
-                            {property.resortName}
-                        </div>
+        <div className="property-card-container">
+            <div id="property-card-img" style={{
+                background: `url(${property.resortImgURL})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center'
+            }}>
+            </div>
+            <div className="card-footer">
+                <div className="card-footer-lb">
+                    <div>
+                        {property.resortLocation + ",  India"}
                     </div>
-                    <div className="card-footer-rb">
-                        <div>
-                            <button id='property-card-add-btn' onClick={()=>viewRooms(property._id, property.resortName)}>CHECK AVAILABILITY</button>
-                        </div>
+                    <div>
+                        {property.resortName}
+                    </div>
+                </div>
+                <div className="card-footer-rb">
+                    <div>
+                        <button id='property-card-add-btn' onClick={() => viewRooms(property._id, property.resortName)}>CHECK AVAILABILITY</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-        </>
     )
 }
 

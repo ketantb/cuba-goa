@@ -1,0 +1,30 @@
+.my-bookings {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    background-color: rgb(244, 83, 55);
+    width: 10rem;
+    height: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.my-bookings h6 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.booking-cart {
+    position: fixed;
+    bottom: 6.5%;
+    right: 0%;
+    padding: 0.2rem 0.5rem 1rem 0.5rem;
+    border: 1px solid black;
+    width: 20rem;
+}
+
+.booking-cart .cross-icon {
+    /* border:1px solid black; */
+    float: right;
+}

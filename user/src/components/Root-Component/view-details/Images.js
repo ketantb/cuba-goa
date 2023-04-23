@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Images.css'
 import { Icon } from 'react-icons-kit'
-import {circleRight} from 'react-icons-kit/icomoon/circleRight'
+import { circleRight } from 'react-icons-kit/icomoon/circleRight'
 import { circleLeft } from 'react-icons-kit/icomoon/circleLeft'
 
 
@@ -37,15 +37,16 @@ const Images = () => {
             <div className='col1-row2'>col1 row2</div>
           </div>
           <div className='col2'>
+            <button className='show-more-images'>SHOW MORE PHOTOS</button>
           </div>
         </div>
 
-        <div className='row2'>
+        {/* <div className='row2'>
           <div></div>
           <div></div>
           <div></div>
           <div></div>
-        </div>
+        </div> */}
       </div>
 
 

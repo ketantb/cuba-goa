@@ -5,12 +5,13 @@ import React from 'react';
 import { Suspense } from 'react';
 import Footer from './components/Root-Component/Footer/Footer';
 import SpaDetailes from "./components/Root-Component/postSpaData/detailedSpa";
-import BookingForm from './components/Root-Component/BookingForm/BookingForm'
 import { useState } from 'react';
 import Register from './components/Root-Component/Register/Register'
 import RatingForm from './components/Root-Component/rating-form/RatingForm';
 
 import ViewDetails from './components/Root-Component/view-details/ViewDetails';
+import RoomCard from './components/Root-Component/view-details/RoomCard/RoomCard';
+
 
 const Header = React.lazy(() => import('./components/Header/Header'))
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -142,11 +143,7 @@ function App() {
               </Suspense>
             } />
 
-            <Route path="/booking-form" element={
-              <Suspense fallback={<p>Loading....</p>}>
-                <BookingForm />
-              </Suspense>
-            } />
+           
 
           </Route>
 

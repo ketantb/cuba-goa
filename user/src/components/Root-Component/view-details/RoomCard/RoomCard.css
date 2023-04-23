@@ -1,0 +1,55 @@
+.RoomCard{
+    padding: 1rem 1rem;
+    width:48%;
+    margin-top: 1rem;
+    border:0.5px solid rgb(1, 32, 65);
+}
+.RoomCard .row1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.RoomCard .row1 .images-icon{
+    /* border:1px solid black; */
+    height: fit-content;
+    color:rgb(3, 3, 70);
+    cursor: pointer;
+}
+
+.RoomCard .row1 .images-icon:hover{
+    color:black;
+}
+.RoomCard .row2{
+    display: flex;
+    flex-wrap:wrap
+}
+.RoomCard .row2 div{
+    width:fit-content;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border:1px solid black;
+}
+
+
+
+
+@media only screen and (max-width:900px) {
+    .RoomCard{
+        padding: 0.5rem 0.5rem;
+        width:95%;
+        margin: auto;
+        margin-top: 1rem;
+    }
+
+    .RoomCard .row2{
+        display: flex;
+        flex-wrap:wrap
+    }
+
+    .RoomCard .row2 div{
+        width:fit-content;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        border:1px solid black;
+    }
+}
