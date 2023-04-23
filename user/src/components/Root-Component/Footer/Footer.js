@@ -27,7 +27,7 @@ const Footer = () => {
 
       </div>
 
-      <div class="social page">
+      <div className="social page">
         <h3>Let's Get Social</h3>
         <div class="socialLinks">
           <a href="https://www.facebook.com/greatblueresorts" target="_blank" title="Like us on facebook">
@@ -43,12 +43,12 @@ const Footer = () => {
             <img src="https://www.greatblueresorts.com/wp-content/themes/do180-theme/images/youtube-2.png" alt="youtube" />
           </a>
         </div>
-        <div class="translate">
+        <div className="translate">
           <h4>Choose Your Preferred Language</h4>
           <div id="google_language_translator" class="default-language-en">
-            <div class="skiptranslate goog-te-gadget" >
+            <div className="skiptranslate goog-te-gadget" >
               <div id="targetLanguage" >
-                <select class="goog-te-combo" aria-label="Language Translate Widget">
+                <select className="goog-te-combo" aria-label="Language Translate Widget">
                   <option value="">Select Language</option>
                   <option value="zh-CN">Chinese (Simplified)</option>
                   <option value="zh-TW">Chinese (Traditional)</option>
@@ -59,8 +59,8 @@ const Footer = () => {
               </div>
               &nbsp;&nbsp;Powered by
               <span >
-                <a class="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank">
-                  <img class="img1" src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" alt="Google Translate" />
+                <a className="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank">
+                  <img className="img1" src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" alt="Google Translate" />
                   Translate</a>
               </span>
             </div>
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div >
 
-      <div class="newsletter">
+      <div className="newsletter">
 
         <h4>
           Helpful links
@@ -88,7 +88,7 @@ const Footer = () => {
     
   </footer >
   <div className='formTab tellMe open'>
-    <h3 class="mainFormTitle open"> DISCOVER MORE {<AiOutlineRight/>}</h3>
+    <h3 className="mainFormTitle open"> DISCOVER MORE {<AiOutlineRight/>}</h3>
   </div>
   </>
   )

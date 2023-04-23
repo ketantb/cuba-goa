@@ -10,6 +10,8 @@ import { useState } from 'react';
 import Register from './components/Root-Component/Register/Register'
 import RatingForm from './components/Root-Component/rating-form/RatingForm';
 
+import ViewDetails from './components/Root-Component/view-details/ViewDetails';
+
 const Header = React.lazy(() => import('./components/Header/Header'))
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
 const About = React.lazy(() => import('./components/Root-Component/About/About'))
@@ -49,7 +51,7 @@ function App() {
                 </>
               </Suspense>
             } />
-          <Route path='/rating-form' element={<RatingForm/>}> </Route>
+            <Route path='/rating-form' element={<RatingForm />}> </Route>
 
             <Route path="/about" element={
               <Suspense fallback={<p>Loading....</p>}>
@@ -97,6 +99,14 @@ function App() {
 
             } />
 
+            <Route path='/:resortname/:id/rooms' element={
+              <Suspense fallback={<p>Loading....</p>}>
+                <>
+                  <ViewDetails />
+                </>
+              </Suspense>
+
+            } />
             <Route path='/contact-us' element={
               <Suspense fallback={<p>Loading....</p>}>
                 <>

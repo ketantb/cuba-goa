@@ -1,0 +1,117 @@
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+.ImagesWrapper {
+    /* border: 1px solid black; */
+    padding: 0rem;
+    margin-bottom: 5rem;
+}
+
+.ImagesWrapper .row1 {
+    display: flex;
+    flex-direction: row;
+    padding: 0rem;
+}
+
+
+.ImagesWrapper .row1 .col1 {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 40%;
+    padding: 0rem;
+    padding-left: 0.4rem;
+}
+
+.ImagesWrapper .row1 .col1 div:first-child {
+    background: url('../../../assets/r1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 11rem;
+    padding: 0rem;
+    margin-top: 0rem;
+}
+
+.ImagesWrapper .row1 .col1 div:last-child {
+    background: url('../../../assets/r2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 11rem;
+    margin-top: 1rem;
+}
+
+.ImagesWrapper .row1 .col2 {
+    background: url('../../../assets/r3.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 58.5%;
+    height: 23rem;
+    margin-left: 0.5rem;
+
+}
+
+.ImagesWrapper .row2 {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: red; */
+    height: fit-content;
+    margin-top: 0.5rem;
+
+}
+
+.ImagesWrapper .row2 div {
+    width: 24%;
+    height: 10rem;
+    background: url('../../../assets/r9.jpg');
+}
+
+
+.ImagesWrapper .desktop-view{
+    display: block;
+}
+.ImagesWrapper .mobile-view{
+    display: none;
+}
+
+
+@media only screen and (max-width:900px){
+    .ImagesWrapper .desktop-view{
+        display: none;
+    }
+    .ImagesWrapper .mobile-view{
+        display: block;
+    }
+
+    .ImagesWrapper .mobile-view div{
+        /* border:1px solid black; */
+        width:100%;
+        height: 20rem;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    .ImagesWrapper .mobile-view div div:first-child,
+    .ImagesWrapper .mobile-view div div:last-child{
+        width: fit-content;
+        /* background-color: red; */
+        height: fit-content;
+    }
+
+    .ImagesWrapper .mobile-view div div:nth-child(2) img{
+        width: 100%;
+        height: 100%;
+        padding-top: 0rem;
+    }
+
+
+
+}

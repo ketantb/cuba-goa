@@ -35,119 +35,6 @@ const AddMoreRoomForm = ({ showRoomForm, setRoomForm, roomData, getPropertiesDat
   const [roomImgUrl, setRoomImgUrl] = useState(false)
 
 
-  // const [roomImgProgress, setRoomProgress] = useState(0)
-
-  // const [roomMultiPalImgUrls, setRoomMultiPalImgUrls] = useState([])
-  // const [roomMultipalImgPrograss, setRoomMultipalImgPrograss] = useState(0)
-
-
-  // const [fileUploaded, setFileUpload] = useState([])
-
-  // const [resortName, setResortName] = useState('')
-  // const [roomName, setRoomName] = useState('')
-  // const [max, setMax] = useState(0)
-  // const [min, setMin] = useState(0)
-  // const [content, setContent] = useState('')
-  // const [children, setChildren] = useState('')
-  // const [adults, setAdults] = useState('')
-  // const [room, setRoom] = useState(0)
-  // const [leftRoom, setLeftRoom] = useState(0)
-  // const [rsRoomOnly, setRoomOnly] = useState(0)
-  // const [rsbreakFast, setBreakFast] = useState(0)
-  // const [roomPerNight, setRomPerNight] = useState(0)
-  // const [roomAminities, setRoomAminities] = useState('')
-  // const [notCancable, setNotCacable] = useState(false)
-  // const [wardrobe, seWardRobe] = useState(false)
-  // const [besideTable, setBesideTable] = useState(false)
-  // const [fan, setFan] = useState(false)
-  // const [balcony, setBalcony] = useState(false)
-  // const [houseKeping, setHouseKeping] = useState(false)
-  // const [mosquito, setMosquito] = useState(false)
-  // const [hour24ColdShower, set24HourColdShower] = useState(false)
-  // const [wifi, setWifi] = useState(false)
-  // const [airCodition, setAirCondition] = useState(false)
-
-  // const [images, setImages] = useState([]);
-  // const [urls, setUrls] = useState([]);
-  // const [progress, setProgress] = useState(0);
-  // const imgref = useRef(null)
-
-  // const handleChangeMultiPal = (e) => {
-
-    // const fileUploaded = []
-    // for (let i = 0; i < e.target.files.length; i++) {
-    //   const newImage = e.target.files[i];
-    //   fileUploaded.push(newImage)
-    // }
-
-    // setFileUpload(val => [...val, ...fileUploaded])
-
-
-
-
-
-
-
-  //   fileUploaded.forEach((file1) => {
-  //     const uploadImage = (file) => {
-  //       if (!fileUploaded) return
-  //       const storageRef = ref(storage, `subphotos/${fileUploaded.name}`)
-  //       const uploadTask = uploadBytesResumable(storageRef, file)
-
-  //       uploadTask.on("state_changed", (snapshot) => {
-  //         // const prog = Math.round((snapshot.bytesTransferred/snapshot.totalBytes) *100)
-  //         //  setRoomProgress(prog)
-  //       }, (error) => {
-  //         console.log(error)
-  //       },
-  //         async () => {
-  //           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-  //             setRoomMultiPalImgUrls((prevVal) => [...prevVal, url])
-  //           })
-  //         }
-  //       )
-  //     }
-  //     uploadImage(file1)
-  //   })
-  // };
-
-  // useEffect(()=>{
-  //   if(!roomMultiPalImgUrls.length&&!fileUploaded.length)return 
-  //   setRoomMultipalImgPrograss(~~(roomMultiPalImgUrls.length/fileUploaded.length)*100)
-  // },[roomMultiPalImgUrls.length,fileUploaded.length])
-
-  // console.log(~~(roomMultiPalImgUrls.length / fileUploaded.length) * 100)
-
-  // console.log(roomMultiPalImgUrls)
-
-  // const handleChange = event => {
-  //   const fileUploaded = event.target.files[0];
-  //   const file = event.target.files[0]
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(file)
-  //   reader.onload = (e) => {
-  //     imgref.current.src = e.target.result
-  //   }
-  //   const uploadImage = (file) => {
-  //     if (!fileUploaded) return
-  //     const storageRef = ref(storage, `photos/${fileUploaded.name}`)
-  //     const uploadTask = uploadBytesResumable(storageRef, fileUploaded)
-
-  //     uploadTask.on("state_changed", (snapshot) => {
-  //       const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
-  //       setRoomProgress(prog)
-  //     }, (error) => {
-  //       console.log(error)
-  //     },
-  //       () => {
-  //         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-  //           setRoomImgUrl(url)
-  //         })
-  //       }
-  //     )
-  //   }
-  //   uploadImage(file)
-  // };
   const [picURL, setPicURL] = useState("")
 
   const imgCloudUpload = async (e) => {
@@ -155,7 +42,7 @@ const AddMoreRoomForm = ({ showRoomForm, setRoomForm, roomData, getPropertiesDat
     if (!roomFormData.roomType) {
       return toast.error("Please fill room type !")
     }
-    else if (roomImages.length == 0) {
+    else if (roomImages.length === 0) {
       return toast.error("No Image Chosen !")
     }
     let arr = []
@@ -181,32 +68,7 @@ const AddMoreRoomForm = ({ showRoomForm, setRoomForm, roomData, getPropertiesDat
 
   const saveRoom = async () => {
     if (!roomData) return
-    // const newRoomdata = {
-    //   allimgurl: roomMultiPalImgUrls,
-    //   imgurl: roomImgUrl,
-    //   title2: roomName,
-    //   roomcapacity: { max: "", min: "" },
-    //   perRoom: rsRoomOnly,
-    //   adults: adults,
-    //   chlidren: children,
-    //   room: room,
-    //   leftroom: "",
-    //   perRoomPerWithBreakFast: rsbreakFast,
-    //   Guest_Reviews: 'No Reviews',
-    //   Room_Amenities: '',
-    //   nonCancel: notCancable,
-    //   Wardrobe: wardrobe,
-    //   Bedside_Table: besideTable,
-    //   Fan: fan,
-    //   Balcony: balcony,
-    //   House_Keeping: houseKeping,
-    //   pernightroom: roomPerNight,
-    //   mosquitonet: mosquito,
-    //   Wifi: wifi,
-    //   coldshower_24hrs: hour24ColdShower,
-    //   airconditioned: airCodition,
-    // }
-    // roomData.availableRooms.push(newRoomdata)
+
     roomData.rooms.push(roomFormData)
     await axios.put(`http://localhost:4001/hotelbook/${roomData._id}`, roomData)
       .then((res) => {
