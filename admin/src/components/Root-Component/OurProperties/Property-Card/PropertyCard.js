@@ -13,7 +13,7 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import AddMoreRoomForm from '../AddMoreRoomForm';
 
 
-const PropertyCard = () => {
+const PropertyCard = ({property}) => {
     const [allProperties, setAllProperties] = useState("")
     const [showRoomForm, setRoomForm] = useState(false)
     const getPropertiesData = async () => {
@@ -40,12 +40,9 @@ const PropertyCard = () => {
     return (
         <>
             <div className='about-hotel'>
-                {allProperties.map((items, index) => {
-                    const { resortDescription, resortImgURL, resortLocation, resortName, rooms } = items;
-                    return (
-                        <div className="property-card-container" key={index}>
+                        <div className="property-card-container" >
                             <div id="property-card-img" style={{
-                                background: `url(${resortImgURL})`,
+                                background: `url(${property.resortImgURL})`,
                                 backgroundSize: 'cover',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundPosition: 'center center'
@@ -55,10 +52,10 @@ const PropertyCard = () => {
                             <div className="card-footer">
                                 <div className="card-footer-lb">
                                     <div>
-                                        {resortLocation + ",  India"}
+                                        {property.resortLocation + ",  India"}
                                     </div>
                                     <div>
-                                        {resortName}
+                                        {property.resortName}
                                     </div>
                                 </div>
                                 <div className="card-footer-rb">
@@ -68,9 +65,7 @@ const PropertyCard = () => {
                                 </div>
                             </div>
                         </div>
-                    )
 
-                })}
             </div>
             <AddMoreRoomForm getPropertiesData={getPropertiesData}
             showRoomForm={showRoomForm}

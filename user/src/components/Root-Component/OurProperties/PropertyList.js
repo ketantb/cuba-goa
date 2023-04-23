@@ -7,9 +7,7 @@ const PropertyList = ({currentList}) => {
         {
             currentList.map((property,i)=>{
                 return(
-                    <>
-                    <PropertyCard property={property} key={property._id}/>
-                    </>
+                    <PropertyCard property={property} key={i+1}/>
                 )
             })
            

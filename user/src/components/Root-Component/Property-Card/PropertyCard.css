@@ -62,12 +62,14 @@
     margin-top: 5px;
 }
 
-#property-card-add-btn{
+.property-card-container
+    #property-card-add-btn{
     background-color: rgb(250, 199, 106);
     color: rgb(49, 49, 49);
 }
 
-#property-card-add-btn:hover{
+.property-card-container
+    #property-card-add-btn:hover{
     background-color:  orange;
 }
 
@@ -92,7 +94,9 @@
     color: red;
     font-size: 28px;
 }
-
+.property-card-container .card-footer .card-footer-rb button{
+    height: fit-content;
+}
 @media screen and (max-width: 650px) {
     .property-card-container{
         width: 350px;

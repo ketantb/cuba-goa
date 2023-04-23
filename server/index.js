@@ -31,7 +31,7 @@ app.use(require('./router/adminRouter'))
 app.use(require('./router/clientRouter'))
 app.use(require('./router/post-property'))
 app.use(require('./router/spaRouter'))
-
+app.use(require('./router/rating'))
 
 
 

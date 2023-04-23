@@ -3,7 +3,6 @@ require("dotenv").config();
 
 const express = require("express");
 const router = express.Router();
-const multer = require('multer')
 const Razorpay = require("razorpay");
 const HotelBook = require("../models/post-property");
 const cartModel = require("../models/cart");
@@ -30,6 +29,12 @@ router.post("/hotelbook", async (req, res) => {
   }
 });
 
+//GET DATA OF SPECIFIC OWNER (login required)
+router.get('/my-resorts',adminMiddleware,(req,resp)=>{
+
+})
+
+
 
 //GET ALL HOTEL DATA TO SHOW TO CLIENTS
 router.get("/hotelbook", async (req, res) => {
@@ -41,16 +46,21 @@ router.get("/hotelbook", async (req, res) => {
   }
 });
 
-//to  get   hotel Book by id
-router.get("/hotelBook/:id", async (req, res) => {
+
+
+//GET SPECIFIC HOTEL BY ID
+router.get("/resort-details/:id", async (req, res) => {
+  const { id } = req.params;
+
   try {
-    const { id } = req.params;
-    const hotelBook = await HotelBook.findById(id);
-    res.status(200).json(hotelBook);
+    const resortData = await HotelBook.find({_id:id});
+    res.json({success:true,resortData:resortData});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
+
+
 
 //to update hotelBook by id
 router.put("/hotelbook/:id", async (req, res) => {
@@ -71,6 +81,7 @@ router.put("/hotelbook/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 
 // delete a hotel Book
 router.delete("/hotelbook/:id", async (req, res) => {

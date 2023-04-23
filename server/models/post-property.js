@@ -11,8 +11,8 @@ const PostPropertySchema = mongoose.Schema({
     resortDescription: {
         type: String,
     },
-    resortImgURL:{
-      type:String
+    resortImgURL: {
+        type: String
     },
 
     rooms: [
@@ -22,7 +22,7 @@ const PostPropertySchema = mongoose.Schema({
             ],
             roomType: { type: String },
             totalRooms: { type: String },
-            adultCapacity: { type: String }, 
+            adultCapacity: { type: String },
             childrenCapacity: { type: String },
             availableRooms: { type: String },
             ratePerNight: { type: String },
@@ -36,14 +36,24 @@ const PostPropertySchema = mongoose.Schema({
             houseKeeping: { type: Boolean },
             balcony: { type: Boolean },
             hotNcoldshower_24hrs: { type: Boolean },
-            airconditioned: { type: Boolean,},
+            airconditioned: { type: Boolean, },
             roomService: { type: Boolean },
             seaView: { type: Boolean },
             fitnessCenter: { type: Boolean },
             swimmingPool: { type: Boolean },
             spa: { type: Boolean },
         }
-    ]
+    ],
+
+    // rating: [
+    //     {
+    //         name: String,
+    //         email: String,
+    //         platform: String,
+    //         additionalComments: String,
+    //         rating: Number
+    //     }
+    // ]
 });
 
 const PostProperty = mongoose.model("PostProperty", PostPropertySchema);

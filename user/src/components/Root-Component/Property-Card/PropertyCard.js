@@ -1,12 +1,19 @@
 import axios from 'axios';
 import './PropertyCard.css'
 import { useState, useEffect } from 'react';
-
+import {useNavigate} from 'react-router-dom'
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 // import AddMoreRoomForm from '../AddMoreRoomForm';
 
 
 const PropertyCard = ({ property }) => {
+
+const navigate=useNavigate()
+    //SHOW ROOMS
+    const viewRooms=(id,resortname)=>{
+        navigate(`/${resortname}/${id}/rooms`)
+        console.log(resortname,id)
+    }
 
     return (
         <>
@@ -30,7 +37,7 @@ const PropertyCard = ({ property }) => {
                     </div>
                     <div className="card-footer-rb">
                         <div>
-                            <button id='property-card-add-btn'>Add Rooms</button>
+                            <button id='property-card-add-btn' onClick={()=>viewRooms(property._id, property.resortName)}>CHECK AVAILABILITY</button>
                         </div>
                     </div>
                 </div>
