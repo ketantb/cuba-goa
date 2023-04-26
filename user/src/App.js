@@ -8,10 +8,9 @@ import SpaDetailes from "./components/Root-Component/postSpaData/detailedSpa";
 import { useState } from 'react';
 import Register from './components/Root-Component/Register/Register'
 import RatingForm from './components/Root-Component/rating-form/RatingForm';
-
+import MyBookings from './components/Root-Component/my-bookings/MyBookings';
 import ViewDetails from './components/Root-Component/view-details/ViewDetails';
-import RoomCard from './components/Root-Component/view-details/RoomCard/RoomCard';
-
+// import BookingPage from './components/Root-Component/view-details/BookingPage/BookingPage'
 
 const Header = React.lazy(() => import('./components/Header/Header'))
 const Home = React.lazy(() => import('./components/Root-Component/Home/Home'))
@@ -52,7 +51,8 @@ function App() {
                 </>
               </Suspense>
             } />
-            <Route path='/rating-form' element={<RatingForm />}> </Route>
+            <Route path='/rating-form/:resortId' element={<RatingForm />}> </Route>
+            <Route path='/my-bookings' element={<MyBookings />}> </Route>
 
             <Route path="/about" element={
               <Suspense fallback={<p>Loading....</p>}>
@@ -73,14 +73,13 @@ function App() {
             } />
 
 
-            <Route path='/our-properties/:name/:id' element={
+            {/* <Route path='/:roomId/:adults/:children/:staylength/reserve-room' element={
               <Suspense fallback={<p>Loading....</p>}>
                 <>
-                  {/* <BookingPage /> */}
                   <Footer />
                 </>
               </Suspense>
-            } />
+            } /> */}
 
             <Route path='/resorts' element={
               <Suspense fallback={<p>Loading....</p>}>
@@ -91,7 +90,10 @@ function App() {
 
             } />
 
-            <Route path='/our-properties' element={
+
+
+
+<Route path='/our-properties' element={
               <Suspense fallback={<p>Loading....</p>}>
                 <>
                   <OurProperties />

@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './BookingPage.css'
-import RoomCard from '../RoomCard/RoomCard'
 
-const BookingPage = () => {
+
+const BookingPage = ({ bookingData, cart, setCart, newRoom }) => {
+
+
+
+  useEffect(() => {
+    setCart([...cart, newRoom])
+    // eslint-disable-next-line
+  }, [roomId])
+
   return (
-    <div className='room-cards-wrapper'>
-     
+    <div className='booking-page-wrapper'>
+      <h5>MY BOOKINGS</h5>
     </div>
   )
 }

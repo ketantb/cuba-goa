@@ -1,25 +1,33 @@
 const router = require('express').Router()
-const RatingModel = require('../models/rating')
-const PropertyModel = require('../models/post-property')
+
+const Rating = require('../models/rating')
+const clientMiddleware = require('../middleware/client')
 
 
-router.put("/hotelbook/:id", async (req, res) => {
-    // console.log(req.params.id)
-    // res.json({message: req.body})
+
+
+router.post('/rate-us', clientMiddleware, async (req, resp) => {
     try {
-        const { id } = req.params;
-        const hotelBook = await PropertyModel.findByIdAndUpdate(id, { rating: req.body.rating });
-        //we cannot find any product in database
-        if (!hotelBook) {
-            return res
-                .status(404)
-                .json({ message: `cannot find any hotel Book with ${id}` });
-        }
-        const updatedHotelBook = await HotelBook.findById(id);
-        res.status(200).json(updatedHotelBook);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
+        const newData = await Rating.create(req.body)
+        resp.json({ success: true, message: 'Thank you for your feedback', data: newData })
     }
-});
+    catch (err) {
+        resp.json({ success: false, message: err })
+    }
+})
 
-module.exports=router
+
+
+router.get('/get-reviews/:id', async (req, resp) => {
+    const id = req.params.id
+    try {
+        const list = await Rating.find({ resortId :id})
+        console.log(list)
+        resp.json({ success: true, list: list })
+    }
+    catch (err) {
+        console.log(err)
+        resp.json({ success: false, message: err })
+    }
+})
+module.exports = router

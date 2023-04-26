@@ -1,8 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
+import { useState } from 'react'
 import './PropertyCard.css'
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { RiDeleteBin5Fill } from 'react-icons/ri';
 // import AddMoreRoomForm from '../AddMoreRoomForm';
 
 
@@ -15,14 +14,17 @@ const PropertyCard = ({ property }) => {
         console.log(resortname, id)
     }
 
+   
+
     return (
-        <div className="property-card-container">
+        <div className="property-card-container" >
             <div id="property-card-img" style={{
                 background: `url(${property.resortImgURL})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center center'
             }}>
+                <button id='view-details-btn' onClick={() => viewRooms(property._id, property.resortName)}>view rooms</button>
             </div>
             <div className="card-footer">
                 <div className="card-footer-lb">
@@ -33,11 +35,7 @@ const PropertyCard = ({ property }) => {
                         {property.resortName}
                     </div>
                 </div>
-                <div className="card-footer-rb">
-                    <div>
-                        <button id='property-card-add-btn' onClick={() => viewRooms(property._id, property.resortName)}>CHECK AVAILABILITY</button>
-                    </div>
-                </div>
+
             </div>
         </div>
 

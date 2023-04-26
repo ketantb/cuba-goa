@@ -1,14 +1,14 @@
 const jwt=require('jsonwebtoken')
 
 const clientMiddleware=(req,resp,next)=>{
-    const token=req.body.authorization
+    const token=req.headers.authorization
 try{
     if(token){
             const {_id}=jwt.verify(token,process.env.SECRET_KEY)
             console.log('id from middleware',token,process.env.SECRET_KEY)
 
             if(_id){
-                req.client=_id
+                req.clientId=_id
                 next();
             }
     }

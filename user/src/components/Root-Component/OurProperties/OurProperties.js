@@ -12,7 +12,7 @@ const Footer = React.lazy(() => import('../Footer/Footer'))
 const OurProperties = () => {
   const [allProperties, setAllProperties] = useState("")
   const [showRoomForm, setRoomForm] = useState(false)
-
+  const [searchCity, setSearchCity] = useState('')
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1)
@@ -25,7 +25,7 @@ const OurProperties = () => {
     // await axios(`https://cubagoa-server.onrender.com/hotelbook`)
     await axios(`http://localhost:4001/hotelbook`)
       .then((res) => {
-        console.log('property list',res.data)
+        console.log('property list', res.data)
         setAllProperties(res.data)
         //    setSelectedVal([res.data[0].resortName, res.data[0]._id])
       })
@@ -43,6 +43,8 @@ const OurProperties = () => {
     )
   }
 
+
+
   return (
     <>
       <main className='our-properties-main'>
@@ -53,8 +55,10 @@ const OurProperties = () => {
           </div>
           <div className='properties-to-book'>
             {/* filter section do at veyr last */}
+            <input type='text' placeholder='Search City' name='searchCity' value={searchCity}
+              onChange={(e) => setSearchCity(e.target.value)} style={{width:'90%', paddingLeft:'1rem'}} />
           </div>
-          <PropertyList currentList={currentList} />
+          <PropertyList currentList={currentList} searchCity={searchCity}   />
           <Pagination totalPosts={allProperties.length} postPerPage={postPerPage} setCurrentPage={setCurrentPage} />
         </div>
       </main >

@@ -2,23 +2,31 @@ import React, { useState } from 'react';
 import './RatingForm.css'
 import { FaStar } from 'react-icons/fa';
 import axios from 'axios'
+import { useParams } from 'react-router';
 
 const RatingForm = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(null);
+  const { resortId } = useParams()
 
   const [ratingform, setratingform] = useState({
-    name: '', email: '', platform: '', additionalComments: '', rating: rating
+    name: '', email: '', platform: '', additionalComments: '', rating: rating,
+    resortId: resortId
   })
 
   const handleInputs = (e) => {
     setratingform(prevState => ({ ...prevState, [e.target.name]: e.target.value }))
   }
 
+  const token = localStorage.getItem('token')
   const handleSubmit = async () => {
     console.log(ratingform)
     // try{
-    const response=await axios.post('http://localhost:4001/ratings', ratingform)
+    const response = await axios.post('http://localhost:4001/rate-us', ratingform, {
+      headers: {
+        authorization: token
+      }
+    })
     console.log(response)
     // }
     // catch(err){

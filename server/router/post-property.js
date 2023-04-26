@@ -5,7 +5,6 @@ const express = require("express");
 const router = express.Router();
 const Razorpay = require("razorpay");
 const HotelBook = require("../models/post-property");
-const cartModel = require("../models/cart");
 const adminMiddleware = require('../middleware/admin')
 
 const secretKey = process.env.RAZOR_SECRET;
@@ -19,7 +18,7 @@ const instance = new Razorpay({
 
 
 
-router.post("/hotelbook", async (req, res) => {
+router.post("/hotelbook",async (req, res) => {
   try {
     const resortData = await HotelBook.create(req.body);
     res.json({ success: true, data: resortData });
@@ -100,6 +99,10 @@ router.delete("/hotelbook/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+
+
+
 
 
 
